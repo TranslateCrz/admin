@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import Greetings from '@/components/Greetings.vue'
+import Greetings from '@/components/TheGreetings.vue'
 </script>
 
 <template>
