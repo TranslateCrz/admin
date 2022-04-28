@@ -42,8 +42,11 @@ import SupportIcon from './icons/IconSupport.vue'
         <a target="_blank" href="https://www.deepl.com/en/translator">DeepL</a>
       </li>
       <li>
-        A simple Javascript package that comes as a React component and a CLI tool
-        <a target="_blank" href="https://github.com/TranslateCrz/localize">read more here</a>
+        A simple Javascript package that comes as a React component and a CLI
+        tool
+        <a target="_blank" href="https://github.com/TranslateCrz/localize"
+          >read more here</a
+        >
       </li>
     </ul>
   </WelcomeItem>
@@ -55,7 +58,9 @@ import SupportIcon from './icons/IconSupport.vue'
     <template #heading>Community</template>
 
     Got stuck? Ask your question on
-    <a target="_blank" href="https://stackoverflow.com/questions/tagged/vue.js">StackOverflow</a>.
+    <a target="_blank" href="https://stackoverflow.com/questions/tagged/vue.js"
+      >StackOverflow</a
+    >.
     <br />
     You should also see our
     <a target="_blank" href="https://github.com/TranslateCrz">GitHub</a>.
@@ -67,6 +72,7 @@ import SupportIcon from './icons/IconSupport.vue'
     </template>
     <template #heading>Register now </template>
 
-    <RouterLink to="/register">Click here</RouterLink> and start using our great tool.
+    <RouterLink to="/register">Click here</RouterLink> and start using our great
+    tool.
   </WelcomeItem>
 </template>

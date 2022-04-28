@@ -5,7 +5,13 @@ import Greetings from '@/components/TheGreetings.vue'
 
 <template>
   <div class="header">
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="@/assets/logo.svg"
+      width="125"
+      height="125"
+    />
 
     <div class="wrapper">
       <Greetings msg="Welcome !" />
