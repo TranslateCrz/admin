@@ -1,12 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 import { Register } from '@/domain/account'
-import { AccountClient } from '@/application/clients/accountClient'
+import { accountService } from '@/application/services/accountService'
 
 const account = ref(new Register())
 function onSubmit() {
-  console.log(account)
-  console.log(AccountClient.register(account))
+  accountService.register(account.value)
 }
 </script>
 

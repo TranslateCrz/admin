@@ -1,20 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 import { Login } from '@/domain/account'
-import { AccountClient } from '@/application/clients/accountClient'
-import { useLoginStore } from '@/stores/login'
-import router from '@/router'
+import { accountService } from '@/application/services/accountService'
 
-const store = useLoginStore()
-if (store.token) {
-  // router.go('account')
-}
 const account = ref(new Login())
 function onSubmit() {
-  AccountClient.login(account.value).then((data) => {
-    store.login(data.token)
-    router.go('account')
-  })
+  accountService.login(account.value)
 }
 </script>
 

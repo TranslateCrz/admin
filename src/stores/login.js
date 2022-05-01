@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { AccountClient } from '@/application/clients/accountClient'
+import { accountClient } from '@/application/clients/accountClient'
 
 const localStorageId = 'login_auth_token'
 
@@ -7,15 +7,18 @@ export const useLoginStore = defineStore({
   id: 'login',
   state: () => ({
     token: null,
-    account: null,
+    account: {},
   }),
   actions: {
     login(token) {
       this.token = token
     },
     connect(account) {
-      console.log('set account')
       this.account = account
+    },
+    logout() {
+      this.token = null
+      this.account = {}
     },
   },
 })
@@ -25,16 +28,18 @@ export const loginPlugin = async ({ store }) => {
     after(() => {
       if ('login' === name) {
         localStorage.setItem(localStorageId, store.token)
-        AccountClient.getProfile().then((data) => {
+        accountClient.getProfile().then((data) => {
           store.connect(data)
         })
+      }
+      if ('logout' === name) {
+        localStorage.removeItem(localStorageId)
       }
     })
   })
 
   const token = localStorage.getItem(localStorageId)
   if (token) {
-    console.log('set token')
     store.login(token)
   }
 }

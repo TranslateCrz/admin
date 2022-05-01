@@ -14,10 +14,12 @@ import Greetings from '@/components/TheGreetings.vue'
     />
 
     <div class="wrapper">
-      <Greetings msg="Welcome !" />
+      <Greetings msg="Settings !" />
 
       <nav>
         <RouterLink to="/account">Account</RouterLink>
+        <RouterLink to="/profile">Profile</RouterLink>
+        <RouterLink to="/translations">Translations</RouterLink>
       </nav>
     </div>
   </div>

@@ -22,6 +22,16 @@ export const Register = class {
   }
 }
 
+export const Profile = class {
+  countries = []
+  company = null
+
+  populate(countries, company) {
+    this.countries = countries
+    this.company = company
+  }
+}
+
 export const Login = class {
   email = ''
 

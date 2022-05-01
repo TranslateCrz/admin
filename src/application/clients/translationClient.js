@@ -1,7 +1,7 @@
-import { Client } from '@/application/clients/client'
+import { client } from '@/application/clients/client'
 
-export const TranslationClient = {
+export const translationClient = {
   get: function () {
-    return Client.post('/translations')
+    return client.post('/translations')
   },
 }

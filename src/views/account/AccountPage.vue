@@ -1,19 +1,14 @@
 <script setup>
 import AccountView from '@/views/AccountView.vue'
-import { useLoginStore } from '@/stores/login'
-import router from '@/router'
+import { accountService } from '@/application/services/accountService'
 
-const store = useLoginStore()
-console.log('get token')
-if (store.token === null) {
-  router.go('home')
-}
+accountService.checkLogin()
 </script>
 
 <template>
   <AccountView>
     <main>
-      <p>Account connected with {{ store.account.email }}</p>
+      <p>Account connected</p>
     </main>
   </AccountView>
 </template>

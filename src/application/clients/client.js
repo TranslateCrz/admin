@@ -3,7 +3,7 @@ import { useLoginStore } from '@/stores/login'
 let store = null
 const getStore = () => useLoginStore()
 
-export const Client = {
+export const client = {
   auth: () => {
     if (store === null) {
       store = getStore()
