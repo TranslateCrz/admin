@@ -4,9 +4,9 @@ import { useLoginStore } from '@/stores/login'
 import { Profile } from '@/domain/account'
 import { accountService } from '@/application/services/accountService'
 
+const store = useLoginStore()
 accountService.checkLogin()
 function onSubmit() {
-  const store = useLoginStore()
   const account = new Profile()
   account.populate(store.account.countries, store.account.company)
   accountService.editProfile(account)
