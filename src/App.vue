@@ -13,6 +13,7 @@ import { RouterView } from 'vue-router'
 
 <style>
 @import '@/assets/base.css';
+@import 'bulma/css/bulma.css';
 
 header {
   position: fixed;
