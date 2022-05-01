@@ -32,7 +32,7 @@ export const accountService = {
     }
   },
   editProfile: (account) => {
-    accountClient.register(account).then((data) => {
+    accountClient.putProfile(account).then((data) => {
       getStore().connect(data)
     })
   },

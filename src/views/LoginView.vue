@@ -19,7 +19,12 @@ function onSubmit() {
         <div class="field">
           <label class="label">Email</label>
           <div class="control">
-            <input class="input" type="email" placeholder="Email" v-model="account.email" />
+            <input
+              class="input"
+              type="email"
+              placeholder="Email"
+              v-model="account.email"
+            />
           </div>
         </div>
       </div>

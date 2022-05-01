@@ -19,7 +19,12 @@ function onSubmit() {
         <div class="field">
           <label class="label">Email</label>
           <div class="control">
-            <input class="input" type="email" placeholder="Email" v-model="account.email" />
+            <input
+              class="input"
+              type="email"
+              placeholder="Email"
+              v-model="account.email"
+            />
           </div>
         </div>
         <div class="field">
@@ -35,7 +40,12 @@ function onSubmit() {
         <div class="field">
           <label class="label">Company</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Company name" v-model="account.company" />
+            <input
+              class="input"
+              type="text"
+              placeholder="Company name"
+              v-model="account.company"
+            />
           </div>
         </div>
       </div>

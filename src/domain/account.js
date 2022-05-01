@@ -1,7 +1,9 @@
 export const Account = class {
-  email = ''
-  countries = []
-  company = null
+  constructor() {
+    this.email = ''
+    this.countries = []
+    this.company = null
+  }
 
   populate(email, countries, company) {
     this.email = email
@@ -11,9 +13,11 @@ export const Account = class {
 }
 
 export const Register = class {
-  email = ''
-  countries = []
-  company = null
+  constructor() {
+    this.email = ''
+    this.countries = []
+    this.company = null
+  }
 
   populate(email, countries, company) {
     this.email = email
@@ -23,8 +27,10 @@ export const Register = class {
 }
 
 export const Profile = class {
-  countries = []
-  company = null
+  constructor() {
+    this.countries = []
+    this.company = null
+  }
 
   populate(countries, company) {
     this.countries = countries
@@ -33,7 +39,9 @@ export const Profile = class {
 }
 
 export const Login = class {
-  email = ''
+  constructor() {
+    this.email = ''
+  }
 
   populate(email) {
     this.email = email
