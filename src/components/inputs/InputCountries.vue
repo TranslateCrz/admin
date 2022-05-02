@@ -1,6 +1,11 @@
 <script setup>
+import langs from 'langs'
+
 defineProps(['countries'])
-defineEmits(['update:countries'])
+const emit = defineEmits(['update:countries'])
+const update = (e) => {
+  emit('update:countries', Array.from(e.target.options).filter((o) => o.selected).map((o) => o.value))
+}
 </script>
 
 <template>
@@ -9,13 +14,17 @@ defineEmits(['update:countries'])
     <div class="select is-multiple">
       <select
         multiple
-        size="3"
-        :value="countries"
-        @input="$emit('update:countries', $event.target.value)"
+        size="5"
+        @input="update"
       >
-        <option value="fr">French</option>
-        <option value="en">English</option>
-        <option value="es">Spanish</option>
+        <option
+          :value="l"
+          :selected="countries.includes(l)"
+          v-for="l in langs.codes('1')"
+          :key="l"
+        >
+          {{ new Intl.DisplayNames(['en'], { type: 'region' }).of(l) }}
+        </option>
       </select>
     </div>
   </div>

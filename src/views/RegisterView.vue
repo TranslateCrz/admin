@@ -4,7 +4,7 @@ import { Register } from '@/domain/account'
 import { accountService } from '@/application/services/accountService'
 import CardForm from '@/components/CardForm.vue'
 
-let account = ref(new Register())
+const account = ref(new Register())
 function onSubmit() {
   accountService.register(account.value)
 }

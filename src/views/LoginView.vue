@@ -2,37 +2,22 @@
 import { ref } from 'vue'
 import { Login } from '@/domain/account'
 import { accountService } from '@/application/services/accountService'
+import CardForm from '@/components/CardForm.vue'
 
 const account = ref(new Login())
 function onSubmit() {
   accountService.login(account.value)
 }
+const accountUpdate = (a) => {
+  account.value.populate(a)
+}
 </script>
 
 <template>
-  <div class="card">
-    <div class="card-header">
-      <p class="card-header-title">Login</p>
-    </div>
-    <form @submit.prevent="onSubmit">
-      <div class="card-content">
-        <div class="field">
-          <label class="label">Email</label>
-          <div class="control">
-            <input
-              class="input"
-              type="email"
-              placeholder="Email"
-              v-model="account.email"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="card-footer">
-        <button type="submit" class="card-footer-item button is-light">
-          Login
-        </button>
-      </div>
-    </form>
-  </div>
+  <CardForm
+    name="Login"
+    :onSubmit="onSubmit"
+    :account="account"
+    @update:account="accountUpdate"
+  />
 </template>
