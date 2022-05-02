@@ -18,9 +18,12 @@ const props = defineProps({
   },
 })
 const emit = defineEmits(['update:account'])
-const emailUpdate = (email) => emit('update:account', { ...props.account, email })
-const countriesUpdate = (countries) => emit('update:account', { ...props.account, countries })
-const companyUpdate = (company) => emit('update:account', { ...props.account, company })
+const emailUpdate = (email) =>
+  emit('update:account', { ...props.account, email })
+const countriesUpdate = (countries) =>
+  emit('update:account', { ...props.account, countries })
+const companyUpdate = (company) =>
+  emit('update:account', { ...props.account, company })
 </script>
 
 <template>

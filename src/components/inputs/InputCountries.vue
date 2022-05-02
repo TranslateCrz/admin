@@ -4,7 +4,12 @@ import langs from 'langs'
 defineProps(['countries'])
 const emit = defineEmits(['update:countries'])
 const update = (e) => {
-  emit('update:countries', Array.from(e.target.options).filter((o) => o.selected).map((o) => o.value))
+  emit(
+    'update:countries',
+    Array.from(e.target.options)
+      .filter((o) => o.selected)
+      .map((o) => o.value)
+  )
 }
 </script>
 
@@ -12,11 +17,7 @@ const update = (e) => {
   <div class="field">
     <label class="label">Languages</label>
     <div class="select is-multiple">
-      <select
-        multiple
-        size="5"
-        @input="update"
-      >
+      <select multiple size="5" @input="update">
         <option
           :value="l"
           :selected="countries.includes(l)"
