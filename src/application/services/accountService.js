@@ -19,7 +19,7 @@ export const accountService = {
   },
   register: (account) => {
     accountClient.register(account).then((data) => {
-      this.login(data.email)
+      accountService.login(data.email)
     })
   },
   logout: () => {

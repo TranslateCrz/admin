@@ -8,7 +8,7 @@ const store = useLoginStore()
 accountService.checkLogin()
 function onSubmit() {
   const account = new Profile()
-  account.populate(store.account.countries, store.account.company)
+  account.populate(store.account)
   accountService.editProfile(account)
 }
 </script>

@@ -5,10 +5,10 @@ export const Account = class {
     this.company = null
   }
 
-  populate(email, countries, company) {
-    this.email = email
-    this.countries = countries
-    this.company = company
+  populate(account) {
+    this.email = account.email
+    this.countries = account.countries
+    this.company = account.company
   }
 }
 
@@ -19,10 +19,10 @@ export const Register = class {
     this.company = null
   }
 
-  populate(email, countries, company) {
-    this.email = email
-    this.countries = countries
-    this.company = company
+  populate(account) {
+    this.email = account.email
+    this.countries = account.countries
+    this.company = account.company
   }
 }
 
@@ -32,9 +32,9 @@ export const Profile = class {
     this.company = null
   }
 
-  populate(countries, company) {
-    this.countries = countries
-    this.company = company
+  populate(account) {
+    this.countries = account.countries
+    this.company = account.company
   }
 }
 
