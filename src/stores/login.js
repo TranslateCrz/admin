@@ -23,7 +23,7 @@ export const useLoginStore = defineStore({
   },
 })
 
-export const loginPlugin = async ({ store }) => {
+export const loginPlugin = ({ store }) => {
   store.$onAction(({ name, after }) => {
     after(() => {
       if ('login' === name) {

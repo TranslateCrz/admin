@@ -43,7 +43,7 @@ export const Login = class {
     this.email = ''
   }
 
-  populate(email) {
-    this.email = email
+  populate(account) {
+    this.email = account.email
   }
 }
