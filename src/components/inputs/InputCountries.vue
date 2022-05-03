@@ -1,7 +1,7 @@
 <script setup>
 import langs from 'langs'
 
-defineProps(['countries'])
+defineProps(['countries', 'error'])
 const emit = defineEmits(['update:countries'])
 const update = (e) => {
   emit(
@@ -16,7 +16,7 @@ const update = (e) => {
 <template>
   <div class="field">
     <label class="label">Languages</label>
-    <div class="select is-multiple">
+    <div class="select is-multiple" :class="{ 'is-danger': error }">
       <select multiple size="5" @input="update">
         <option
           :value="l"
@@ -28,5 +28,6 @@ const update = (e) => {
         </option>
       </select>
     </div>
+    <p v-if="error" class="help is-danger">{{ error }}</p>
   </div>
 </template>

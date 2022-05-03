@@ -12,6 +12,10 @@ const props = defineProps({
     type: Function,
     required: true,
   },
+  error: {
+    type: Object,
+    required: true,
+  },
   account: {
     type: Object,
     required: true,
@@ -35,11 +39,13 @@ const companyUpdate = (company) =>
       <div class="card-content">
         <InputEmail
           v-if="account.email !== undefined"
+          :error="error.email"
           :email="account.email"
           @update:email="emailUpdate"
         />
         <InputCountries
           v-if="account.countries !== undefined"
+          :error="error.countries"
           :countries="account.countries"
           @update:countries="countriesUpdate"
         />

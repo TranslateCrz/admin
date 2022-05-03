@@ -1,5 +1,5 @@
 <script setup>
-defineProps(['email'])
+defineProps(['email', 'error'])
 defineEmits(['update:email'])
 </script>
 
@@ -9,11 +9,13 @@ defineEmits(['update:email'])
     <div class="control">
       <input
         class="input"
+        :class="{ 'is-danger': error }"
         type="email"
         placeholder="Email"
         :value="email"
         @input="$emit('update:email', $event.target.value)"
       />
     </div>
+    <p v-if="error" class="help is-danger">{{ error }}</p>
   </div>
 </template>
