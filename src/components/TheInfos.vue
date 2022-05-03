@@ -1,5 +1,5 @@
 <script setup>
-import WelcomeItem from './InfoItem.vue'
+import InfoItem from './InfoItem.vue'
 import DocumentationIcon from './icons/IconDocumentation.vue'
 import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
@@ -8,7 +8,7 @@ import SupportIcon from './icons/IconSupport.vue'
 </script>
 
 <template>
-  <WelcomeItem>
+  <InfoItem>
     <template #icon>
       <DocumentationIcon />
     </template>
@@ -17,9 +17,9 @@ import SupportIcon from './icons/IconSupport.vue'
     TranslateCrz’s
     <RouterLink to="/docs">official documentation</RouterLink>
     provides you with all information you need to get started.
-  </WelcomeItem>
+  </InfoItem>
 
-  <WelcomeItem>
+  <InfoItem>
     <template #icon>
       <EcosystemIcon />
     </template>
@@ -27,9 +27,9 @@ import SupportIcon from './icons/IconSupport.vue'
     The simplest tool for code localization and globalization !<br />
     We aim to make life easy for developers and all workers in charge of
     translating websites around the world.
-  </WelcomeItem>
+  </InfoItem>
 
-  <WelcomeItem>
+  <InfoItem>
     <template #icon>
       <ToolingIcon />
     </template>
@@ -49,9 +49,9 @@ import SupportIcon from './icons/IconSupport.vue'
         >
       </li>
     </ul>
-  </WelcomeItem>
+  </InfoItem>
 
-  <WelcomeItem>
+  <InfoItem>
     <template #icon>
       <CommunityIcon />
     </template>
@@ -64,9 +64,9 @@ import SupportIcon from './icons/IconSupport.vue'
     <br />
     You should also see our
     <a target="_blank" href="https://github.com/TranslateCrz">GitHub</a>.
-  </WelcomeItem>
+  </InfoItem>
 
-  <WelcomeItem>
+  <InfoItem>
     <template #icon>
       <SupportIcon />
     </template>
@@ -74,5 +74,5 @@ import SupportIcon from './icons/IconSupport.vue'
 
     <RouterLink to="/register">Click here</RouterLink> and start using our great
     tool.
-  </WelcomeItem>
+  </InfoItem>
 </template>

@@ -14,17 +14,17 @@ export const accountService = {
   login: (account) => {
     accountClient.login(account).then((data) => {
       getStore().login(data.token)
-      router.go('account')
+      router.push({ name: 'account' })
     })
   },
   register: (account) => {
     accountClient.register(account).then((data) => {
-      this.login(data.email)
+      accountService.login(data.email)
     })
   },
   logout: () => {
     getStore().logout()
-    router.go('home')
+    router.push({ name: 'home' })
   },
   checkLogin: () => {
     if (getStore().token === null) {
